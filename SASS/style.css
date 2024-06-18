@@ -285,7 +285,6 @@ h1,
 }
 
 footer {
-  height: 186px;
   width: 85%;
   color: white;
   background-color: #353535;
@@ -296,6 +295,7 @@ footer {
 footer h2 {
   font-size: 18px;
   margin-top: 0;
+  margin-bottom: 20px;
 }
 
 .footer__list {
