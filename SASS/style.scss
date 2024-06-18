@@ -2,6 +2,13 @@
   font-family: "Roboto", sans-serif;
 }
 
+.shrikhand-regular {
+    font-family: "Shrikhand", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+
 // COLORS
 
 $first-color: #9356dc;
@@ -305,3 +312,44 @@ h1,
 // .like-icon:hover {
 //     background: linear-gradient($first-color, $second-color);
 // }
+
+footer {
+    height: 186px;
+    width: 85%;
+    color: white;
+    background-color: $second-bg-color ;
+    margin-top: 60px;
+    padding: 22px 25px 22px 25px;
+}
+
+footer h2 {
+    font-size: 18px;
+    margin-top: 0;
+}
+
+.footer__list {  
+    display: flex;
+    flex-direction: column; 
+    padding-left: 0;
+}
+
+footer a{
+    text-decoration: none;
+    color: white;
+    padding-bottom: 7px;
+}
+
+footer .text-icon {    
+    font-weight: 500;
+}
+
+footer .fa-solid {
+    color: white;
+    padding-right: 12px;
+}
+
+.fa-handshake-angle {
+    font-size: 12px;
+}
+
+
