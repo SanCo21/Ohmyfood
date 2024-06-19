@@ -213,12 +213,17 @@ h1,
 }
 
 .restaurant-card {
-  height: 241px;
+  height: 231px;
   width: 100%;
   margin-bottom: 15px;
   background-color: white;
   border-radius: 15px;
   filter: drop-shadow(0 4px 15px rgba(0, 0, 0, 0.1));
+}
+
+.restaurant-card a {
+  text-decoration: none;
+  color: black;
 }
 
 .restaurant-card__image {
@@ -227,7 +232,7 @@ h1,
 }
 
 .restaurant-card__image img {
-  height: 100%;
+  height: 160px;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
@@ -267,7 +272,8 @@ h1,
   margin-top: 0;
 }
 
-.restaurant-card__title i {
+.heart-container {
+  font-size: 21px;
   position: absolute;
   top: 5px;
   right: 20px;
@@ -275,13 +281,23 @@ h1,
   width: 22px;
 }
 
-.fa-regular {
+.heart-no-like {
   color: black;
-  font-size: 21px;
+  position: absolute;
 }
 
-.like-icon {
-  visibility: collapse;
+.heart-like {
+  color: transparent;
+  position: absolute;
+}
+
+.heart-like:hover {
+  /* This shows the gradient as a text color rather than element bg. */
+  background: linear-gradient(180deg, #9356dc -5%, #ff79da 120%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
 }
 
 footer {
