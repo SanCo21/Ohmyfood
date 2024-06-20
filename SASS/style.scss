@@ -9,7 +9,7 @@
   }
   
 
-// COLORS
+// COLORS VARIABLES 
 
 $first-color: #9356dc;
 $second-color: #ff79da;
@@ -21,86 +21,157 @@ $third-bg-color: #eaeaea;
 
 $icon-color: #7e7e7e;
 
+
 .fa-solid {
-  color: $first-color;
+    color: $first-color;
 }
 
 body {
-  display: flex;
-  justify-content: center;
-  margin: 0px;
+    display: flex;
+    justify-content: center;
+    margin: 0px;
 }
 
 .main-container {
-  width: 100%;
-  max-width: 1440px;
-  min-width: 320px;
-  /* padding: 0 50px; */
-  box-sizing: border-box;
-  background-color: $main-bg-color;
+    width: 100%;
+    max-width: 1440px;
+    min-width: 320px;
+    /* padding: 0 50px; */
+    box-sizing: border-box;
+    background-color: $main-bg-color;
 }
 
 header {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  /* height: 113px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* height: 113px; */
 }
 
 .logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 63px;
-    // filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15));
-  background-color:white;
- 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 63px;
+        // filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15));
+    background-color:white;
 }
 
 .logo img {
-  height: 30px;
-  padding-top: 10px;
+    height: 30px;
+    padding-top: 10px;
 }
 
 .fa-arrow-left {
-  position: absolute;
-  left: 25px;
-  display: flex;
-  align-items: center;
-  color: $second-bg-color;
-  font-size: 17px;
-  font-weight: bold;
-  visibility: hidden;
+    position: absolute;
+    left: 25px;
+    display: flex;
+    align-items: center;
+    color: $second-bg-color;
+    font-size: 17px;
+    font-weight: bold;
+    visibility: hidden;
 }
 
 .location {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  height: 50px;
-  /* width: 375px; */
-  width: 100%;
-  background-color: $third-bg-color;
-  filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    /* width: 375px; */
+    width: 100%;
+    background-color: $third-bg-color;
+    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 .fa-location-dot {
-  color: $second-bg-color;
-  font-size: 16px;
-  height: 16px;
-  width: 12px;
-  display: flex;
-  padding-right: 17px;
+    color: $second-bg-color;
+    font-size: 16px;
+    height: 16px;
+    width: 12px;
+    display: flex;
+    padding-right: 17px;
 }
 
 .location p {
-  color: $second-bg-color;
-  font-size: 16px;
-  font-weight: 500;
+    color: $second-bg-color;
+    font-size: 16px;
+    font-weight: 500;
 }
+
+// .loader-section {
+//     height:100%;    
+//     // width: 100%;
+//     // opacity: 0;
+    
+// }
+
+
+.loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    height: 100%;    
+    width: 100%;
+    background-color: rgba($third-color, $alpha: 0.5);
+    animation: loader-container forwards 3.5s;
+  }
+
+  // Pour faire disparaître loadeur à la fin de l'animation
+  @keyframes loader-container { 
+	70% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+	99% {
+		transform: scale(1);
+	}
+	100% {
+		transform: scale(0); 
+        
+	}
+}
+  
+  .loader {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: $first-color;
+    box-shadow: 52px 0 $second-color, -52px 0 $second-color;
+    position: relative;
+    animation: flash 0.8s ease-out infinite alternate;       
+  }
+  
+  .loader i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    margin-top: 4px;
+  }
+  
+  @keyframes flash {
+    0% {
+      background-color: $first-color;
+      box-shadow: 52px 0 $first-color, -52px 0 $second-color;
+    }
+    50% {
+      background-color: $second-color;
+      box-shadow: 52px 0 $first-color, -52px 0 $first-color;
+    }
+    100%{
+        background-color: $first-color;
+      box-shadow: 52px 0 $second-color, -52px 0 $first-color;
+    }
+  }
 
 .title {
     display: flex;
@@ -108,133 +179,143 @@ header {
     justify-content: center;
     align-items: center;
     padding: 30px;
-     background-color: $main-bg-color;
+    background-color: $main-bg-color;
 }
 
 h1,
 .title p {
-  text-align: center;
-  margin: 0;
-  /* margin-top: 30px; */
-  margin-bottom: 15px;
+    text-align: center;
+    margin: 0;
+    /* margin-top: 30px; */
+    margin-bottom: 15px;
 }
 
 .title h1 {
-  font-size: 24px;
-  font-weight: bold;
-  margin-right: 30px;
-  margin-left: 30px;
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 30px;
+    margin-left: 30px;
 }
 
 .title p {
-  font-size: 18px;
-  /* font-weight: light; */
-  font-weight: 300;
+    font-size: 18px;
+    /* font-weight: light; */
+    font-weight: 300;
+    width: 315px;
 }
 
 .title .buttonHightLight {
-  /* background: linear-gradient(to left top,#9356DC,#FF79DA); */
-  /* background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%); */
-  background: linear-gradient(5deg, $first-color -5%, $second-color 120%);
-  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.25));
-  border-style: none;
-  border-radius: 25px;
-  /* box-sizing: border-box; */
-  color: white;
-  /* font-style: normal; */
-  font-weight: 500;
-  font-size: 16px;
-  text-decoration: none;
-  /* line-height: 19px; */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 218px;
-  height: 50px;
-  margin-top: 20px;
-  margin-bottom: 25px;
+    /* background: linear-gradient(to left top,#9356DC,#FF79DA); */
+    /* background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%); */
+    background: linear-gradient(5deg, $first-color -5%, $second-color 120%);
+    filter: drop-shadow(0 3px 7px rgba(0, 0, 0, 0.25));
+    border-style: none;
+    border-radius: 25px;
+    /* box-sizing: border-box; */
+    color: white;
+    /* font-style: normal; */
+    font-weight: 400;
+    font-size: 16px;
+    text-decoration: none;
+    /* line-height: 19px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 218px;
+    height: 50px;
+    margin-top: 20px;
+    margin-bottom: 25px;
 }
 
 .buttonHightLight:hover {
-  /* font-weight: 800; */
-  /* background: whitesmoke; */
-  opacity: 80%;
-  transform: scale(1.01);
-  filter: drop-shadow(0 4px 15px rgba(0, 0, 0, 0.35));
-  transition: 0.3s ease-in-out;
+    opacity: 0.8;
+    transform: scale(1.01);
+    filter: drop-shadow(0 3px 10px rgba(0, 0, 0, 0.35));
+    transition: 0.3s ease-in-out;
 }
 
 .how-to {
-  padding: 20px;
-  background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 18px;
+    background-color: white;
+    height: 400px;
+//   width: 375px;
 }
 
-
-
 .card-container {
-  /* position: relative; */
-  display: flex;
-  flex-direction: row;
-  /* justify-content: center; */
-  align-items: center;
-  margin-bottom: 20px;
+    //   width: 325px;  
+    /* position: relative; */
+    display: flex;
+    flex-direction: row;
+    /* justify-content: center; */
+    align-items: center;
+    padding-bottom: 22px;
+    //   margin-right: 18px;
 }
 
 .number {
-  position: absolute;
-  left: 23px;
-  z-index: 1;
-  background-color: $first-color;
-  color: white;
-  font-size: 14px;
-  border-radius: 50px;
-  height: 24px;
-  width: 24px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-bottom: 0;
+    position: absolute;
+    left: 23px;
+    z-index: 1;
+    background-color: $first-color;
+    color: white;
+    font-size: 14px;
+    border-radius: 50px;
+    height: 24px;
+    width: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 0;
 }
 
 .card {
-  position: relative;
-  display: flex;
-  /* justify-content: center; */
-  align-items: center;
-  margin-left: 15px;
-  height: 72.38px;
-  width: 100%;
-  background-color: $main-bg-color;
-  border-radius: 20px;
-  filter: drop-shadow(0 4px 15px rgba(0, 0, 0, 0.15));
+    position: relative;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    margin-left: 15px;
+    height: 72.38px;
+    width: 100%;
+    background-color: $main-bg-color;
+    border-radius: 20px;
+    filter: drop-shadow(0 4px 7px rgba(0, 0, 0, 0.15));
 }
 .card p {
-  /* color: black; */
-  font-weight: 500;
-  margin-left: 75px;
+    /* color: black; */
+    font-weight: 500;
+    margin-left: 75px;
 }
 
 .card i {
-  position: absolute;
-  left: 35px;
-  top: 23px;
-  color: $icon-color;
-  height: 20px;
-  font-size: 19px;
+    position: absolute;
+    left: 35px;
+    top: 23px;
+    color: $icon-color;
+    height: 20px;
+    font-size: 19px;
 }
 
 .restaurant-container{
-    margin-left: 20px;
-    margin-right: 20px;
+    // margin-left: 18px;
+    // margin-right: 18px;
+    padding-left: 15px;
+    padding-right: 15px;
+    display: flex;
+    flex-direction: column;
+    
 }
 
 .restaurant-card {
-    height: 231px;
-    width: 100%;
-    margin-bottom: 15px;
+    height: 251px;
+    // width: 100%;
+    // width: 330px;
+    margin-bottom: 18px;
     background-color: white;
     border-radius: 15px;
-    filter: drop-shadow(0 4px 15px rgba(0, 0, 0, 0.10));
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.10));
 }
 
 .restaurant-card a {
@@ -243,7 +324,6 @@ h1,
 }
 
 .restaurant-card__image {
-    
     height: 70%;
     position: relative;
     // display: flex;
@@ -253,7 +333,7 @@ h1,
 
 .restaurant-card__image img {
     // height: 100%;
-    height: 160px;
+    height: 175px;
     width: 100%;
     object-fit: cover;
     object-position: bottom;
@@ -276,12 +356,9 @@ h1,
     right: 15px;
 }
 
-
-
 .restaurant-card__title {
     position: relative;
     height: 20px;
-    // background-color: #ff79da;
 }
 
 .restaurant-card__title h3 {
@@ -298,33 +375,6 @@ h1,
     margin-top: 0;    
 }
 
-// .restaurant-card__title i {
-//     position: absolute;
-//     top: 5px;
-//     right: 20px;
-//     height: 21px;
-//     width: 22px;
-// }
-
-
-
-// $cd-like-start: red;
-// $cd-like-end: yellow;
-
-// .like {
-//     // visibility: collapse;
-//     background-color: $cd-like-start;
-//     border: 4px solid $cd-like;
-//     border-radius: 10rem;
-//     cursor: pointer;
-//     font-size: 3rem;
-//     padding: 1.85rem 3rem;
-//     &:hover {
-//         transform: scale(1.13);
-//         background-color: $cd-like-end;
-//     }
-// }
-
 .heart-container {    
     font-size: 21px; 
     position: absolute;
@@ -340,24 +390,27 @@ h1,
 }
 
 .heart-like {
-     color: transparent;
+    color: transparent;
     position: absolute;
     
 }
 
 .heart-like:hover {
-    /* This shows the gradient as a text color rather than element bg. */
+    // This shows the gradient as a text color rather than element bg
     // background: linear-gradient($first-color, $second-color);
     background: linear-gradient(180deg, $first-color -5%, $second-color 120%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     -moz-background-clip: text;
     -moz-text-fill-color: transparent;
+    transform: scale(1.5);   
+    transition: 0.3s ease-in-out;
 }
 
 
 footer {
-    width: 85%;
+    // width: 85%;
+    // width: 100%;
     color: white;
     background-color: $second-bg-color ;
     margin-top: 60px;
@@ -380,10 +433,11 @@ footer a{
     text-decoration: none;
     color: white;
     padding-bottom: 7px;
+    font-weight: 300;
 }
 
 footer .text-icon {    
-    font-weight: 500;
+    font-weight: 400;
 }
 
 footer .fa-solid {

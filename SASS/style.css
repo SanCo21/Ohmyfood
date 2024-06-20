@@ -87,6 +87,65 @@ header {
   font-weight: 500;
 }
 
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(153, 226, 208, 0.5);
+  animation: loader-container forwards 3.5s;
+}
+
+@keyframes loader-container {
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+  99% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+.loader {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #9356dc;
+  box-shadow: 52px 0 #ff79da, -52px 0 #ff79da;
+  position: relative;
+  animation: flash 0.8s ease-out infinite alternate;
+}
+
+.loader i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  margin-top: 4px;
+}
+
+@keyframes flash {
+  0% {
+    background-color: #9356dc;
+    box-shadow: 52px 0 #9356dc, -52px 0 #ff79da;
+  }
+  50% {
+    background-color: #ff79da;
+    box-shadow: 52px 0 #9356dc, -52px 0 #9356dc;
+  }
+  100% {
+    background-color: #9356dc;
+    box-shadow: 52px 0 #ff79da, -52px 0 #9356dc;
+  }
+}
 .title {
   display: flex;
   flex-direction: column;
@@ -115,19 +174,20 @@ h1,
   font-size: 18px;
   /* font-weight: light; */
   font-weight: 300;
+  width: 315px;
 }
 
 .title .buttonHightLight {
   /* background: linear-gradient(to left top,#9356DC,#FF79DA); */
   /* background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%); */
   background: linear-gradient(5deg, #9356dc -5%, #ff79da 120%);
-  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.25));
+  filter: drop-shadow(0 3px 7px rgba(0, 0, 0, 0.25));
   border-style: none;
   border-radius: 25px;
   /* box-sizing: border-box; */
   color: white;
   /* font-style: normal; */
-  font-weight: 500;
+  font-weight: 400;
   font-size: 16px;
   text-decoration: none;
   /* line-height: 19px; */
@@ -141,17 +201,19 @@ h1,
 }
 
 .buttonHightLight:hover {
-  /* font-weight: 800; */
-  /* background: whitesmoke; */
-  opacity: 80%;
+  opacity: 0.8;
   transform: scale(1.01);
-  filter: drop-shadow(0 4px 15px rgba(0, 0, 0, 0.35));
+  filter: drop-shadow(0 3px 10px rgba(0, 0, 0, 0.35));
   transition: 0.3s ease-in-out;
 }
 
 .how-to {
-  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 18px;
   background-color: white;
+  height: 400px;
 }
 
 .card-container {
@@ -160,7 +222,7 @@ h1,
   flex-direction: row;
   /* justify-content: center; */
   align-items: center;
-  margin-bottom: 20px;
+  padding-bottom: 22px;
 }
 
 .number {
@@ -189,7 +251,7 @@ h1,
   width: 100%;
   background-color: #f6f6f6;
   border-radius: 20px;
-  filter: drop-shadow(0 4px 15px rgba(0, 0, 0, 0.15));
+  filter: drop-shadow(0 4px 7px rgba(0, 0, 0, 0.15));
 }
 
 .card p {
@@ -208,17 +270,18 @@ h1,
 }
 
 .restaurant-container {
-  margin-left: 20px;
-  margin-right: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
+  display: flex;
+  flex-direction: column;
 }
 
 .restaurant-card {
-  height: 231px;
-  width: 100%;
-  margin-bottom: 15px;
+  height: 251px;
+  margin-bottom: 18px;
   background-color: white;
   border-radius: 15px;
-  filter: drop-shadow(0 4px 15px rgba(0, 0, 0, 0.1));
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.1));
 }
 
 .restaurant-card a {
@@ -232,7 +295,7 @@ h1,
 }
 
 .restaurant-card__image img {
-  height: 160px;
+  height: 175px;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
@@ -292,16 +355,16 @@ h1,
 }
 
 .heart-like:hover {
-  /* This shows the gradient as a text color rather than element bg. */
   background: linear-gradient(180deg, #9356dc -5%, #ff79da 120%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   -moz-background-clip: text;
   -moz-text-fill-color: transparent;
+  transform: scale(1.5);
+  transition: 0.3s ease-in-out;
 }
 
 footer {
-  width: 85%;
   color: white;
   background-color: #353535;
   margin-top: 60px;
@@ -324,10 +387,11 @@ footer a {
   text-decoration: none;
   color: white;
   padding-bottom: 7px;
+  font-weight: 300;
 }
 
 footer .text-icon {
-  font-weight: 500;
+  font-weight: 400;
 }
 
 footer .fa-solid {
