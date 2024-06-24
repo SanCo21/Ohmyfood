@@ -213,6 +213,7 @@ body .main-container main .how-to {
   body .main-container main .how-to {
     padding-right: 12%;
     padding-left: 12%;
+    height: 50%;
   }
 }
 body .main-container main .how-to .how-to-container {

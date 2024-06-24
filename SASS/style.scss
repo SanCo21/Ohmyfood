@@ -267,12 +267,15 @@ body {
                 //     padding-right: 5%px;
                 //     padding-left: 5%;
                 // }
+                background-color: white;
+                height: 400px;
                 @include breakpoint-desktop {
                     padding-right: 12%;
                     padding-left: 12%;
+                    height: 50%;
+
                 }
-                background-color: white;
-                height: 400px;
+                
             
                 .how-to-container {
                     display: flex;
