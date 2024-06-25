@@ -1,0 +1,46 @@
+// Variables
+$first-color: #9356dc;
+$second-color: #ff79da;
+$third-color: #99e2d0;
+
+$main-bg-color: #f6f6f6;
+$second-bg-color: #353535;
+$third-bg-color: #eaeaea;
+
+$icon-color: #7e7e7e;
+
+
+// TYPO
+* {
+    font-family: "Roboto", sans-serif;
+}
+  
+.shrikhand-regular {
+    font-family: "Shrikhand", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.fa-solid {
+    color: $first-color;
+}
+
+
+// Mixins
+@mixin breakpoint-tablet {
+    @media screen and (min-width: $breakpoint-tablet) {
+		@content;
+	}
+} 
+/* large devices (desktop, less/equal than 1400px) */
+ @mixin breakpoint-desktop {
+    @media screen and (min-width: $breakpoint-desktop) {
+        @content;
+    }
+ }
+
+ // BREAKPOINTS
+// $breakpoints-mobile: 768px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1200px;
+$breakpoint-large-desktop: 1400px;

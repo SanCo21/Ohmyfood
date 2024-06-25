@@ -1,0 +1,85 @@
+footer {
+    // width: 85%;
+    // width: 100%;
+    color: white;
+    background-color: $second-bg-color;
+    margin-top: 60px;
+    padding: 22px 25px 22px 25px;
+    @include breakpoint-desktop {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: end;
+        height: 50px;
+        margin-top: 0;
+        padding: 30px 25px 30px 25px;
+        // justify-content: space-between;
+    }
+
+    h2 {
+        font-size: 18px;
+        margin-top: 0;
+        margin-bottom: 20px;
+        @include breakpoint-desktop {
+            display: flex;
+            flex-direction: row-reverse;
+            margin: 0 30px 5px 16px;                    
+            // justify-content: space-between;
+        }
+    }
+    
+    .footer__list {  
+        display: flex;
+        flex-direction: column; 
+        padding-left: 0;
+        @include breakpoint-desktop {
+            flex-direction: row;
+            justify-content: space-between;
+            margin-right: 50px;                    
+        }
+        a {
+            text-decoration: none;
+            color: white;
+            padding-bottom: 7px;
+            padding-right: 14px;
+            font-weight: 300;                                                   
+            }
+        .text-icon {    
+            font-weight: 400;
+        }   
+    
+        .fa-solid {
+            color: white;
+            padding-right: 12px;
+        }
+
+        .fa-handshake-angle {
+            font-size: 12px;
+        }      
+
+        .footer__list-icon {
+            display: flex;
+            flex-direction: column;
+            @include breakpoint-desktop {
+                padding-bottom: 0px;
+                display: flex;
+                flex-direction: row;
+            }
+        }
+
+        .footer__list-text {
+            display: flex;
+            flex-direction: column;
+            @include breakpoint-desktop {
+                display: flex;
+                flex-direction: row;
+                padding-bottom: 0px;
+                margin-left: 20px;
+                padding-left: 7px;
+                padding-right: 0;
+            }
+        }    
+    }
+}
+
+
+
