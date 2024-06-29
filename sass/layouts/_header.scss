@@ -1,8 +1,12 @@
-header {
+.header {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color:white;
+    @include breakpoint-desktop {
+        height: 96px;
+    }
     /* height: 113px; */
 
     .logo {
@@ -12,7 +16,7 @@ header {
         width: 100%;
         height: 63px;
             // filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15));
-        background-color:white;
+        // background-color:white;
 
         img {
             height: 30px;
@@ -22,12 +26,16 @@ header {
         .fa-arrow-left {
             position: absolute;
             left: 25px;
+            top: 25px;
             display: flex;
             align-items: center;
             color: $second-bg-color;
             font-size: 17px;
             font-weight: bold;
-            visibility: hidden;
+            // visibility: hidden;
+            @include breakpoint-desktop {
+                top: 40px;
+            }
         }
     }
 

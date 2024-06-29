@@ -1,14 +1,14 @@
-footer {
+.footer {
     // width: 85%;
     // width: 100%;
     color: white;
     background-color: $second-bg-color;
-    margin-top: 60px;
+    margin-top: 25px;
     padding: 22px 25px 22px 25px;
     @include breakpoint-desktop {
         display: flex;
         flex-direction: row-reverse;
-        align-items: end;
+        align-items: flex-end;
         height: 50px;
         margin-top: 0;
         padding: 30px 25px 30px 25px;

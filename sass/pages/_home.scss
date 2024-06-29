@@ -10,9 +10,7 @@ body {
         /* padding: 0 50px; */
         box-sizing: border-box;
         background-color: $main-bg-color;
-    
-        
-                  
+                      
         main {   
             .loader-container {
                 display: flex;
@@ -82,7 +80,8 @@ body {
                 justify-content: center;
                 align-items: center;
                 padding: 30px;
-                @include breakpoint-tablet {padding-bottom: 0;
+                @include breakpoint-tablet {
+                    padding-bottom: 0;
                 }
                 background-color: $main-bg-color;
                 
@@ -110,27 +109,8 @@ body {
                     }
                 }
             
-                .buttonHightLight {
-                    /* background: linear-gradient(to left top,#9356DC,#FF79DA); */
-                    /* background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%); */
-                    background: linear-gradient(5deg, $first-color -5%, $second-color 120%);
-                    filter: drop-shadow(0 3px 7px rgba(0, 0, 0, 0.25));
-                    border-style: none;
-                    border-radius: 25px;
-                    /* box-sizing: border-box; */
-                    color: white;
-                    /* font-style: normal; */
-                    font-weight: 400;
-                    font-size: 16px;
-                    text-decoration: none;
-                    /* line-height: 19px; */
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    width: 218px;
-                    height: 50px;
-                    margin-top: 20px;
-                    margin-bottom: 25px;
+                .button {
+                    @include button;
                 }
             
                 .buttonHightLight:hover {
@@ -139,7 +119,6 @@ body {
                 filter: drop-shadow(0 3px 10px rgba(0, 0, 0, 0.35));
                 transition: 0.3s ease-in-out;
                 }
-            
             }
             
                         
@@ -147,18 +126,20 @@ body {
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
-                padding: 18px;
-                // @include breakpoint-tablet {
-                //     padding-right: 5%px;
-                //     padding-left: 5%;
-                // }
+                padding: 18px;                
                 background-color: white;
                 height: 400px;
+
+                @include breakpoint-tablet {
+                    // padding-right: 5%;
+                    // padding-left: 5%;
+                    height: 50%;
+                }
+
                 @include breakpoint-desktop {
                     padding-right: 12%;
                     padding-left: 12%;
-                    height: 50%;
-
+                    // height: 50%;
                 }
                 
             
@@ -189,10 +170,11 @@ body {
                             align-items: center;
                             margin-left: 15px;
                             height: 72.38px;
-                            width: 100%;                            
-                            background-color: $main-bg-color;
-                            border-radius: 20px;
-                            filter: drop-shadow(0 4px 7px rgba(0, 0, 0, 0.15));
+                            width: 100%;
+                            @include card;                          
+                            // background-color: $main-bg-color;
+                            // border-radius: 20px;
+                            // filter: drop-shadow(0 4px 7px rgba(0, 0, 0, 0.15));
                 
                             .card-number {
                                 position: absolute;
@@ -218,16 +200,16 @@ body {
                                 height: 20px;
                                 font-size: 19px;
                             }
+
                             p {
                                 /* color: black; */
                                 font-weight: 500;                                
                                 margin-left: 75px;
-                                margin-right: 5px;
+                                margin-right: 10px;
                                 @include breakpoint-tablet {
                                     display: flex;
                                 }
                             }
-                
                         }
                     }
                 }    
@@ -239,17 +221,27 @@ body {
                 padding-right: 15px;
                 @include breakpoint-desktop {
                     padding-right: 12%;
-                    padding-left: 12%;
-                }
-                
+                    padding-left: 12%;                    
+                }                
             
                 .restaurant-container {
                     display: flex;
                     flex-direction: column;
+                    align-content: space-between;
+                    gap: 18px;
+                    padding-bottom: 20px;
                     @include breakpoint-tablet {
                         flex-direction: row;
                         flex-wrap: wrap;
                         justify-content: space-between;
+                        align-content: space-between;
+                        // padding-bottom: 0px;
+                        gap: 40px;                   
+                    }
+
+                    @include breakpoint-desktop {
+                        gap: 50px;
+                        padding-bottom: 20px;
                     }
 
                     // .restaurant-card-container {
@@ -260,18 +252,14 @@ body {
                         .restaurant-card {
                             height: 251px;
                             width: 100%;                            
-                            margin-bottom: 18px;
+                            // margin-bottom: 18px;
                             background-color: white;
                             border-radius: 15px;
                             filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.10));
                             @include breakpoint-tablet{
                                 max-width: 47%;
-                                margin-bottom: 50px;
+                                // margin-bottom: 50px;                                
                             }
-                            @include breakpoint-desktop {
-                                // max-width: 490px;
-                                // margin-bottom: 50px;
-                            } 
 
                             a {
                                 text-decoration: none;
@@ -321,40 +309,40 @@ body {
                                         margin-top: 0;    
                                     }
                     
-                                    .heart-container {    
-                                        font-size: 21px; 
-                                        position: absolute;
-                                        top: 5px;
-                                        right: 20px;
-                                        height: 21px;
-                                        width: 22px;    
+                                    // .heart-container {    
+                                    //     font-size: 21px; 
+                                    //     position: absolute;
+                                    //     top: 5px;
+                                    //     right: 20px;
+                                    //     height: 21px;
+                                    //     width: 22px;    
                                                     
-                                        .heart-no-like {
-                                            color: black;    
-                                            position: absolute; 
-                                        }
+                                    //     .heart-no-like {
+                                    //         color: black;    
+                                    //         position: absolute; 
+                                    //     }
                                         
-                                        .heart-like {                        
-                                            opacity: 0;
-                                            position: absolute; 
-                                            transition-property: all;
-                                            transition-duration: 1s;
-                                        }
+                                    //     .heart-like {                        
+                                    //         opacity: 0;
+                                    //         position: absolute; 
+                                    //         transition-property: all;
+                                    //         transition-duration: 1s;
+                                    //     }
                                         
-                                        .heart-like:hover {
-                                            // This shows the gradient as a text color rather than element bg
-                                            // background: linear-gradient($first-color, $second-color);
-                                            background: linear-gradient(180deg, $first-color -5%, $second-color 120%);
-                                            -webkit-background-clip: text;
-                                            -webkit-text-fill-color: transparent;
-                                            -moz-background-clip: text;
-                                            -moz-text-fill-color: transparent;
-                                            // transform: scale(1);   
-                                            // transition: transform 0.3s ease-in-out;
-                                            // transition: transform 1s ease-in-out;
-                                            opacity: 1;
-                                        }
-                                    }
+                                    //     .heart-like:hover {
+                                    //         // This shows the gradient as a text color rather than element bg
+                                    //         // background: linear-gradient($first-color, $second-color);
+                                    //         background: linear-gradient(180deg, $first-color -5%, $second-color 120%);
+                                    //         -webkit-background-clip: text;
+                                    //         -webkit-text-fill-color: transparent;
+                                    //         -moz-background-clip: text;
+                                    //         -moz-text-fill-color: transparent;
+                                    //         // transform: scale(1);   
+                                    //         // transition: transform 0.3s ease-in-out;
+                                    //         // transition: transform 1s ease-in-out;
+                                    //         opacity: 1;
+                                    //     }
+                                    // }
                                 }
                                     
                             }          
