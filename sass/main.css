@@ -616,11 +616,9 @@ body .main-container main .restaurants .restaurant-container .restaurant-card a 
   width: 100%;
   animation: appear 1000ms 3s both ease-in-out;
 }
-.restaurant .restaurant-info .menu-container .menu-card-container {
-  display: flex;
-  flex-direction: row;
-}
-.restaurant .restaurant-info .menu-container .menu-card-container .menu-card {
+.restaurant .restaurant-info .menu-container .menu-card {
+  position: relative;
+  z-index: 2;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -631,14 +629,15 @@ body .main-container main .restaurants .restaurant-container .restaurant-card a 
   background-color: white;
   border-radius: 15px;
   width: 100%;
+  overflow: hidden;
 }
-.restaurant .restaurant-info .menu-container .menu-card-container .menu-card__dish {
+.restaurant .restaurant-info .menu-container .menu-card__dish {
   display: flex;
   flex-direction: column;
   overflow: hidden;
   padding: 12px;
 }
-.restaurant .restaurant-info .menu-container .menu-card-container .menu-card__dish h4 {
+.restaurant .restaurant-info .menu-container .menu-card__dish h4 {
   font-size: 18px;
   font-weight: 500;
   margin: 0px 5px 5px 0px;
@@ -646,7 +645,7 @@ body .main-container main .restaurants .restaurant-container .restaurant-card a 
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.restaurant .restaurant-info .menu-container .menu-card-container .menu-card__dish p {
+.restaurant .restaurant-info .menu-container .menu-card__dish p {
   font-size: 15px;
   font-weight: 300;
   margin: 0px 5px 0px 0px;
@@ -654,39 +653,46 @@ body .main-container main .restaurants .restaurant-container .restaurant-card a 
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.restaurant .restaurant-info .menu-container .menu-card-container .menu-card__price {
+.restaurant .restaurant-info .menu-container .menu-card__price {
   display: flex;
+  position: relative;
+  z-index: 1;
   justify-content: end;
   align-items: end;
-  padding: 12px;
+  padding: 0 12px 12px 12px;
+  margin-left: 12px;
+  background-color: white;
+  width: 59px;
 }
-.restaurant .restaurant-info .menu-container .menu-card-container .menu-card__price p {
+.restaurant .restaurant-info .menu-container .menu-card__price p {
   font-size: 15px;
   font-weight: 500;
   margin-bottom: 0;
 }
-.restaurant .restaurant-info .menu-container .menu-card-container .menu-check {
-  margin-top: 12px;
+.restaurant .restaurant-info .menu-container .menu-card__price:hover {
+  animation: slide 0.3s ease-in forwards;
+}
+.restaurant .restaurant-info .menu-container .menu-card__check {
+  position: absolute;
+  right: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #99e2d0;
   border-radius: 0 15px 15px 0;
   width: 59px;
+  height: 100%;
 }
-.restaurant .restaurant-info .menu-container .menu-card-container .menu-check i {
+.restaurant .restaurant-info .menu-container .menu-card__check i {
   color: white;
   font-size: 20px;
-}
-.restaurant .restaurant-info .menu-container .menu-card-container .menu-check:hover {
-  animation: slide 0.5s ease forwards;
 }
 @keyframes slide {
   0% {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-40px);
+    transform: translateX(-60px);
   }
 }
 @keyframes appear {
