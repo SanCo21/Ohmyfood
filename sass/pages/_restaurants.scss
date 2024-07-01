@@ -25,7 +25,7 @@
         // }
 
         & img {
-            margin: -0.5% -5% -5% -5%;
+            margin: 0% -5% -5% 0%;
             width: 100%;
             @include breakpoint-tablet {
                 margin: -10% 0 -10% 0;;
@@ -56,7 +56,7 @@
             width: 75%;
         }
 
-        .restaurant-info__title {
+        &__title {
             display: flex;                    
             justify-content: center;
             align-items: center;
@@ -76,49 +76,28 @@
             }
         }
 
-        .restaurant-info__menu {
+        &__menu {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            // background-color: $main-bg-color;
-            // background-color: blueviolet;
-            // padding: 0px;
             border-radius: 20px 20px 0 0;
             // margin-top: -50px;
             position: relative;
-            // z-index: 1;
-            // width: 1055px;
             width: 100%;
-
-            
         }
 
-        .menu-card-container {
-            // display: flex;
-            // flex-direction: column;
+        .menu-container {
             background-color: $main-bg-color;
             position: relative;
-            // margin-top: -10px;
-            // margin-left: 0px;
-            // margin-right: 0px;
             padding: 10px 13px 0 13px;
             max-width: 634px;
             width: 90%;
-            // z-index: 1;
             @include breakpoint-tablet {
                 width: 100%;
-                // max-width: 634px;
             }
-
-            .menu-card-course {
-                margin-bottom: 40px;
-                display: flex;
-                flex-direction: column;
-                width: 100%;
-            }
-            
-            .menu-card-course h3 { 
+            // 
+            h3 {
                 width: 40px;
                 position: relative;
                 font-size: 16px;
@@ -130,24 +109,46 @@
                 // border: 40px;
             }
 
-            .menu-card {                
+            &__starter {
+                margin-bottom: 40px;
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                animation: appear 1000ms 0.5s both ease-in-out;
+            }
+
+            &__mainCourse {
+                margin-bottom: 40px;
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                animation: appear 1000ms 2s both ease-in-out;
+            }
+
+            &__dessert {
+                margin-bottom: 40px;
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                animation: appear 1000ms 3s both ease-in-out;
+            }
+
+            .menu-card {
                 display: flex;
                 flex-direction: row;
-                // position: relative;
                 justify-content: space-between;
-                // height: 67px;
-                // width: 345px;
                 margin-top: 12px;
-                padding: 12px;      
+                // padding: 12px;      
                 @include card;
                 background-color: white;
-                border-radius: 15px;    
-                        
+                border-radius: 15px;
 
-                .menu-card__dish {
+                &__dish {
+                    display: flex;
+                    flex-direction: column;
                     overflow: hidden;
-                    // width: 230px;
-                    // @include ellipsis;
+                    padding: 12px;
+                
                     h4 {
                         font-size: 18px;
                         font-weight: 500;
@@ -162,27 +163,75 @@
                         @include ellipsis;
                     }
                 }
-                .menu-card__price {
-                    font-size: 15px;
-                    font-weight: 500;
+
+                // &__info {
+                //     display: flex;
+                //     // flex-direction: row;
+                //     // justify-content: space-between;                     
+
+                &__price {                        
                     display: flex;
+                    // justify-content: space-between;
+                    // justify-content: end;
                     align-items: end;
-                    // margin-bottom: 0px;
+                    padding: 12px;
+                    
                     & p {
-                        margin-bottom: 0px;
+                        font-size: 15px;
+                        font-weight: 500;
+                        margin-bottom: 0;
+                    }
+
+                    &:hover {
+                        animation: slide 0.5s ease forwards;
                     }
                 }
+
+                &__check {
+                    display: flex;
+                    // flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    // display: flex;
+                    // flex-direction: row;               
+                    background-color: $third-color;
+                    border-radius: 0 15px 15px 0;
+                    width: 59px;
+                    // height: 69px;
+                    
+                    i {
+                        color: white;
+                        font-size: 20px;
+                        // font-weight: 500;
+                    }
+                    
+                    &:hover {
+                        animation: slide 0.5s ease forwards;
+                    }
+
+                    @keyframes slide {
+                        0% { transform: translateX(0); }
+                        100% { transform: translateX(-40px); }
+                    }
+                } 
+            }
+
+            @keyframes appear {
+                0% { opacity: 0; transform: translateY(-20px); }
+                100% { opacity: 1; transform: translateY(0px); }
             }
         }
+        
         .order {
             display: flex;
             justify-content: center;
             margin-top: 0;
-            margin-bottom: 40px;
+            margin-bottom: 20px;
             padding: 0;
-
+            @include breakpoint-desktop {
+                margin-bottom: 40px;
+            }
             
-
             .button {        
                 @include button;
                 margin-top: 0;
@@ -190,7 +239,4 @@
             } 
         }
     } 
-}          
-            
-            
-
+}
