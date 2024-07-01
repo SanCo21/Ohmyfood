@@ -133,61 +133,64 @@
                 animation: appear 1000ms 3s both ease-in-out;
             }
 
-            .menu-card {
+            .menu-card-container {
                 display: flex;
                 flex-direction: row;
-                justify-content: space-between;
-                margin-top: 12px;
-                // padding: 12px;      
-                @include card;
-                background-color: white;
-                border-radius: 15px;
 
-                &__dish {
+                .menu-card {
                     display: flex;
-                    flex-direction: column;
-                    overflow: hidden;
-                    padding: 12px;
-                
-                    h4 {
-                        font-size: 18px;
-                        font-weight: 500;
-                        margin: 0px 5px 5px 0px;
-                        @include ellipsis;
-                    }
-
-                    p {
-                        font-size: 15px;
-                        font-weight: 300;
-                        margin: 0px 5px 0px 0px;
-                        @include ellipsis;
-                    }
-                }
-
-                // &__info {
-                //     display: flex;
-                //     // flex-direction: row;
-                //     // justify-content: space-between;                     
-
-                &__price {                        
-                    display: flex;
-                    // justify-content: space-between;
-                    // justify-content: end;
-                    align-items: end;
-                    padding: 12px;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    margin-top: 12px;
+                    // padding: 12px;      
+                    @include card;
+                    background-color: white;
+                    border-radius: 15px;
+                    width: 100%;
+                                    
+                    &__dish {
+                        display: flex;
+                        flex-direction: column;
+                        overflow: hidden;
+                        padding: 12px;
                     
-                    & p {
-                        font-size: 15px;
-                        font-weight: 500;
-                        margin-bottom: 0;
+                        h4 {
+                            font-size: 18px;
+                            font-weight: 500;
+                            margin: 0px 5px 5px 0px;
+                            @include ellipsis;
+                        }
+
+                        p {
+                            font-size: 15px;
+                            font-weight: 300;
+                            margin: 0px 5px 0px 0px;
+                            @include ellipsis;
+                        }
                     }
 
-                    &:hover {
-                        animation: slide 0.5s ease forwards;
-                    }
-                }
+                    &__price {                        
+                        display: flex;
+                        // justify-content: space-between;
+                        justify-content: end;
+                        align-items: end;
+                        padding: 12px;
+                        
+                        & p {
+                            font-size: 15px;
+                            font-weight: 500;
+                            margin-bottom: 0;
+                        }
 
-                &__check {
+                        // &:hover {
+                        //     animation: slide 0.5s ease forwards;
+                        // }
+                    }                   
+                }   
+
+                .menu-check {
+                    
+                    margin-top: 12px;
                     display: flex;
                     // flex-direction: row;
                     justify-content: center;
@@ -198,22 +201,32 @@
                     border-radius: 0 15px 15px 0;
                     width: 59px;
                     // height: 69px;
+                        
+                        i {
+                            color: white;
+                            font-size: 20px;
+                            // font-weight: 500;
+                        }
+                        
+                        // &:hover {
+                        //     animation: slide 0.5s ease forwards;
+                        // }
+
+                        // @keyframes slide {
+                        //     0% { transform: translateX(0); }
+                        //     100% { transform: translateX(-40px); }
+                        // }
                     
-                    i {
-                        color: white;
-                        font-size: 20px;
-                        // font-weight: 500;
-                    }
-                    
+
                     &:hover {
                         animation: slide 0.5s ease forwards;
-                    }
+                    }                     
+                }
+            }
 
-                    @keyframes slide {
-                        0% { transform: translateX(0); }
-                        100% { transform: translateX(-40px); }
-                    }
-                } 
+            @keyframes slide {
+                0% { transform: translateX(0); }
+                100% { transform: translateX(-40px); }
             }
 
             @keyframes appear {
