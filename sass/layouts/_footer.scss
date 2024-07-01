@@ -1,6 +1,4 @@
-.footer {
-    // width: 85%;
-    // width: 100%;
+.footer {    
     color: white;
     background-color: $second-bg-color;
     margin-top: 25px;
@@ -11,8 +9,7 @@
         align-items: flex-end;
         height: 50px;
         margin-top: 0;
-        padding: 30px 25px 30px 25px;
-        // justify-content: space-between;
+        padding: 30px 25px 15px 25px;        
     }
 
     h2 {

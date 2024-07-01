@@ -147,7 +147,9 @@
                 background-color: white;
                 border-radius: 15px;
                 width: 100%;
-                overflow: hidden;                
+                overflow: hidden;  
+                
+                             
                                 
                 &__dish {
                     z-index: 2;
@@ -168,7 +170,7 @@
                         font-weight: 300;
                         margin: 0px 5px 0px 0px;
                         @include ellipsis;
-                    }
+                    }                   
                 }
 
                 &__price {                        
@@ -193,10 +195,7 @@
 
                     &:hover {
                         animation: slide 0.3s ease-in forwards;
-                    }
-                    // &:hover {
-                    //     animation: slide 0.5s ease forwards;
-                    // }
+                    }                    
                 }                 
                
                 &__check {  
