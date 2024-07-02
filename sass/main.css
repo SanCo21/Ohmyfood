@@ -40,13 +40,30 @@
   opacity: 1;
 }
 
-.button:hover {
-  opacity: 0.8;
-  transform: scale(1.01);
-  filter: drop-shadow(0 3px 10px rgba(0, 0, 0, 0.35));
-  transition: 0.3s ease-in-out;
+@keyframes flash {
+  0% {
+    background-color: #9356dc;
+    box-shadow: 52px 0 #9356dc, -52px 0 #ff79da;
+  }
+  50% {
+    background-color: #ff79da;
+    box-shadow: 52px 0 #9356dc, -52px 0 #9356dc;
+  }
+  100% {
+    background-color: #9356dc;
+    box-shadow: 52px 0 #ff79da, -52px 0 #9356dc;
+  }
 }
-
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
 .header {
   display: flex;
   flex-direction: column;
@@ -217,25 +234,10 @@ body .loader i {
   font-size: 20px;
   margin-top: 4px;
 }
-@keyframes flash {
-  0% {
-    background-color: #9356dc;
-    box-shadow: 52px 0 #9356dc, -52px 0 #ff79da;
-  }
-  50% {
-    background-color: #ff79da;
-    box-shadow: 52px 0 #9356dc, -52px 0 #9356dc;
-  }
-  100% {
-    background-color: #9356dc;
-    box-shadow: 52px 0 #ff79da, -52px 0 #9356dc;
-  }
-}
 body .main-container {
   width: 100%;
   max-width: 1440px;
   min-width: 320px;
-  /* padding: 0 50px; */
   box-sizing: border-box;
   background-color: #f6f6f6;
 }
@@ -317,8 +319,6 @@ body .main-container main .title p {
   }
 }
 body .main-container main .title .button {
-  /* background: linear-gradient(to left top,#9356DC,#FF79DA); */
-  /* background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%); */
   background: linear-gradient(5deg, #9356dc -5%, #ff79da 120%);
   filter: drop-shadow(0 3px 7px rgba(0, 0, 0, 0.25));
   border-style: none;
@@ -339,7 +339,7 @@ body .main-container main .title .button {
   margin-bottom: 25px;
   transition: all 0.5s ease-in-out;
 }
-body .main-container main .title .buttonHightLight:hover {
+body .main-container main .title .button:hover {
   opacity: 0.8;
   transform: scale(1.01);
   filter: drop-shadow(0 3px 10px rgba(0, 0, 0, 0.35));
@@ -375,10 +375,8 @@ body .main-container main .how-to .how-to-container {
   }
 }
 body .main-container main .how-to .how-to-container .card-container {
-  /* position: relative; */
   display: flex;
   flex-direction: row;
-  /* justify-content: center; */
   align-items: center;
   padding-bottom: 22px;
 }
@@ -390,7 +388,6 @@ body .main-container main .how-to .how-to-container .card-container {
 body .main-container main .how-to .how-to-container .card-container .card {
   position: relative;
   display: flex;
-  /* justify-content: center; */
   align-items: center;
   margin-left: 15px;
   height: 72.38px;
@@ -399,7 +396,7 @@ body .main-container main .how-to .how-to-container .card-container .card {
   border-radius: 20px;
   filter: drop-shadow(0 4px 7px rgba(0, 0, 0, 0.15));
 }
-body .main-container main .how-to .how-to-container .card-container .card .card-number {
+body .main-container main .how-to .how-to-container .card-container .card__number {
   position: absolute;
   left: -12px;
   z-index: 1;
@@ -414,7 +411,7 @@ body .main-container main .how-to .how-to-container .card-container .card .card-
   align-items: center;
   padding-bottom: 0;
 }
-body .main-container main .how-to .how-to-container .card-container .card i {
+body .main-container main .how-to .how-to-container .card-container .card__icon {
   position: absolute;
   left: 35px;
   top: 23px;
@@ -422,14 +419,16 @@ body .main-container main .how-to .how-to-container .card-container .card i {
   height: 20px;
   font-size: 19px;
 }
-body .main-container main .how-to .how-to-container .card-container .card p {
-  /* color: black; */
+body .main-container main .how-to .how-to-container .card-container .card__icon:hover {
+  color: #9356dc;
+}
+body .main-container main .how-to .how-to-container .card-container .card__text {
   font-weight: 500;
   margin-left: 75px;
   margin-right: 10px;
 }
 @media screen and (min-width: 768px) {
-  body .main-container main .how-to .how-to-container .card-container .card p {
+  body .main-container main .how-to .how-to-container .card-container .card__text {
     display: flex;
   }
 }
@@ -533,7 +532,7 @@ body .main-container main .restaurants .restaurant-container .restaurant-card a 
   -o-object-fit: cover;
      object-fit: cover;
   overflow: hidden;
-  height: 275px;
+  max-height: 275px;
 }
 .restaurant .restaurant__image img {
   margin: -5% -5% -5% 0%;
@@ -541,13 +540,13 @@ body .main-container main .restaurants .restaurant-container .restaurant-card a 
 }
 @media screen and (min-width: 768px) {
   .restaurant .restaurant__image img {
-    margin: -10% 0 -10% 0;
+    margin: -20% 0 -10% 0;
   }
 }
 @media screen and (min-width: 1200px) {
   .restaurant .restaurant__image img {
-    max-height: 30%;
-    margin: -22% 0 -16% 0;
+    max-height: 50%;
+    margin: -30% 0 -6% 0;
   }
 }
 .restaurant .restaurant-info {
@@ -559,7 +558,7 @@ body .main-container main .restaurants .restaurant-container .restaurant-card a 
   width: 100%;
   background-color: #f6f6f6;
   border-radius: 40px 40px 0 0;
-  margin-top: -100px;
+  margin-top: -40px;
 }
 @media screen and (min-width: 1200px) {
   .restaurant .restaurant-info {
@@ -708,16 +707,6 @@ body .main-container main .restaurants .restaurant-container .restaurant-card a 
   color: white;
   font-size: 20px;
 }
-@keyframes appear {
-  0% {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0px);
-  }
-}
 .restaurant .restaurant-info .order {
   display: flex;
   justify-content: center;
@@ -731,8 +720,6 @@ body .main-container main .restaurants .restaurant-container .restaurant-card a 
   }
 }
 .restaurant .restaurant-info .order .button {
-  /* background: linear-gradient(to left top,#9356DC,#FF79DA); */
-  /* background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%); */
   background: linear-gradient(5deg, #9356dc -5%, #ff79da 120%);
   filter: drop-shadow(0 3px 7px rgba(0, 0, 0, 0.25));
   border-style: none;
@@ -754,4 +741,10 @@ body .main-container main .restaurants .restaurant-container .restaurant-card a 
   transition: all 0.5s ease-in-out;
   margin-top: 0;
   margin-bottom: 0;
+}
+.restaurant .restaurant-info .order .button:hover {
+  opacity: 0.8;
+  transform: scale(1.01);
+  filter: drop-shadow(0 3px 10px rgba(0, 0, 0, 0.35));
+  transition: 0.3s ease-in-out;
 }/*# sourceMappingURL=main.css.map */

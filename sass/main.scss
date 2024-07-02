@@ -1,4 +1,7 @@
 @import "./utils/settings";
+@import "./utils/variables.scss";
+@import "./utils/mixins.scss";
+@import "./utils/animations.scss";
 @import "./layouts/header";
 @import "./layouts/footer";
 @import "./pages/home";

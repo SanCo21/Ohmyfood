@@ -1,0 +1,68 @@
+// RESPONSIVE
+
+@mixin breakpoint-tablet {
+    @media screen and (min-width: $breakpoint-tablet) {
+		@content;
+	}
+} 
+/* large devices (desktop, less/equal than 1400px) */
+ @mixin breakpoint-desktop {
+    @media screen and (min-width: $breakpoint-desktop) {
+        @content;
+    }
+ }
+
+
+// BUTTON
+
+ @mixin button {
+    background: linear-gradient(5deg, $first-color -5%, $second-color 120%);
+    filter: drop-shadow(0 3px 7px rgba(0, 0, 0, 0.25));
+    border-style: none;
+    border-radius: 25px;
+    /* box-sizing: border-box; */
+    color: white;
+    /* font-style: normal; */
+    font-weight: 400;
+    font-size: 16px;
+    text-decoration: none;
+    /* line-height: 19px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 218px;
+    height: 50px;
+    margin-top: 20px;
+    margin-bottom: 25px;    
+    transition: all 0.5s ease-in-out;
+}
+
+@mixin button--hover {
+    opacity: 0.8;
+    transform: scale(1.01);
+    filter: drop-shadow(0 3px 10px rgba(0, 0, 0, 0.35));
+    transition: 0.3s ease-in-out;
+}
+
+
+ // RESTAURANTS MENU CARDS FRAME
+
+@mixin card {                            
+    background-color: $main-bg-color;
+    border-radius: 20px;
+    filter: drop-shadow(0 4px 7px rgba(0, 0, 0, 0.15));
+}
+
+
+// RESTAURANTS MENU CARDS ELLIPSE
+
+@mixin ellipsis {
+    // display: block;
+    // min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    // width: calc(90%);
+}
+
+
