@@ -240,6 +240,7 @@ body {
                     align-content: space-between;
                     gap: 18px;
                     padding-bottom: 20px;
+                    
                     @include breakpoint-tablet {
                         flex-direction: row;
                         flex-wrap: wrap;

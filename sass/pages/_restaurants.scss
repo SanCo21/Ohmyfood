@@ -6,12 +6,13 @@
     background-color: white;    
 
     .restaurant__image {
-        // display: flex;        
+        // display: flex; 
+        // position: absolute;  
+        background-position: center;
         object-fit: cover;
-        overflow: hidden;
-        // height: 50%; 
+        overflow: hidden;        
         max-height: 275px;  
-        // width: 100%;
+        
         
         & img {
             margin: -5% -5% -5% 0%;
