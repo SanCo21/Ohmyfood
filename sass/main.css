@@ -637,13 +637,13 @@ body .main-container main .restaurants .restaurant-container .restaurant-card a 
   position: relative;
   display: flex;
   margin-top: 12px;
-  background-color: #f6f6f6;
-  border-radius: 20px;
-  filter: drop-shadow(0 4px 7px rgba(0, 0, 0, 0.15));
   background-color: white;
   border-radius: 15px;
   width: 100%;
   overflow: hidden;
+  background-color: #f6f6f6;
+  border-radius: 20px;
+  filter: drop-shadow(0 4px 7px rgba(0, 0, 0, 0.15));
 }
 .restaurant .restaurant-info .menu-container .menu-card__dish {
   display: flex;
