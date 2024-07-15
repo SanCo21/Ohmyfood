@@ -15,23 +15,7 @@ body {
         background-color: rgba($third-color, $alpha: 0.5);
         animation: loader-container forwards 3.5s;
     }
-    
-    // Pour faire disparaître le loadeur à la fin de l'animation
-    @keyframes loader-container { 
-        70% {
-            opacity: 1;
-        }
-        100% {
-            opacity: 0;
-        }
-        99% {
-            transform: scale(1);
-        }
-        100% {
-            transform: scale(0);    
-        }
-    }
-    
+       
     .loader {
         width: 30px;
         height: 30px;
@@ -66,7 +50,6 @@ body {
                 justify-content: center;
                 align-items: center;
                 height: 50px;
-                /* width: 375px; */
                 width: 100%;
                 background-color: $third-bg-color;
                 filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
@@ -95,9 +78,11 @@ body {
                 align-items: center;
                 background-color: $main-bg-color;
                 padding: 30px;
+
                 @include breakpoint-tablet {
                     padding-bottom: 0;
                 }
+
                 @include breakpoint-desktop {
                     padding-top: 15px;
                 }                            
@@ -106,6 +91,7 @@ body {
                     text-align: center;
                     margin: 0;                    
                     margin-bottom: 15px;
+
                     @include breakpoint-desktop {
                         margin-top: 10px;
                     }                
@@ -116,16 +102,17 @@ body {
                     font-weight: bold;
                     margin-right: 30px;
                     margin-left: 30px;
+
                     @include breakpoint-desktop {
                         font-size: 40px;
                     }
                 }
             
                 p {
-                    font-size: 18px;
-                    /* font-weight: light; */
+                    font-size: 18px;                    
                     font-weight: 300;
                     width: 315px;
+
                     @include breakpoint-tablet {
                         width: 100%;
                     }
@@ -161,6 +148,7 @@ body {
                 .how-to-container {
                     display: flex;
                     flex-direction: column;
+
                     @include breakpoint-tablet {
                         flex-direction: row;
                         justify-content: space-between;
@@ -171,6 +159,7 @@ body {
                         flex-direction: row;                        
                         align-items: center;
                         padding-bottom: 22px;
+
                         @include breakpoint-tablet {
                             width: 30%;
                         } 
@@ -182,6 +171,7 @@ body {
                             margin-left: 15px;
                             height: 72.38px;
                             width: 100%;
+
                             @include card;                          
                                                         
                             &__number {
@@ -217,6 +207,7 @@ body {
                                 font-weight: 500;                                
                                 margin-left: 75px;
                                 margin-right: 10px;
+
                                 @include breakpoint-tablet {
                                     display: flex;
                                 }   
@@ -229,6 +220,7 @@ body {
             .restaurants {    
                 padding-left: 15px;
                 padding-right: 15px;
+
                 @include breakpoint-desktop {
                     padding-right: 12%;
                     padding-left: 12%;                    
@@ -245,8 +237,7 @@ body {
                         flex-direction: row;
                         flex-wrap: wrap;
                         justify-content: space-between;
-                        align-content: space-between;
-                        // padding-bottom: 0px;
+                        align-content: space-between;                        // padding-bottom: 0px;
                         gap: 40px;                   
                     }
 
@@ -257,14 +248,13 @@ body {
                 
                     .restaurant-card {
                         height: 251px;
-                        width: 100%;                            
-                        // margin-bottom: 18px;
+                        width: 100%;   
                         background-color: white;
                         border-radius: 15px;
                         filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.10));
+                        
                         @include breakpoint-tablet{
-                            max-width: 47%;
-                            // margin-bottom: 50px;                                
+                            max-width: 47%;                                                           
                         }
 
                         a {
@@ -278,8 +268,7 @@ body {
                                 img {                    
                                     height: 175px;
                                     width: 100%;
-                                    object-fit: cover;
-                                    // object-position: bottom;
+                                    object-fit: cover;                                    
                                     object-position: 0 63%;
                                     border-top-left-radius: 15px;
                                     border-top-right-radius: 15px ;
@@ -289,8 +278,7 @@ body {
                                     color: #008766;
                                     background-color: #99E2D0;
                                     font-size: 14px;
-                                    font-weight: 500;
-                                    // height: 29px;
+                                    font-weight: 500;                                   
                                     width: 80px;
                                     text-align: center;
                                     padding: 5px;    

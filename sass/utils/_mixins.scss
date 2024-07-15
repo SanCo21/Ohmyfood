@@ -4,7 +4,8 @@
     @media screen and (min-width: $breakpoint-tablet) {
 		@content;
 	}
-} 
+}
+ 
 /* large devices (desktop, less/equal than 1200px) */
  @mixin breakpoint-desktop {
     @media screen and (min-width: $breakpoint-desktop) {
@@ -20,13 +21,10 @@
     filter: drop-shadow(0 3px 7px rgba(0, 0, 0, 0.25));
     border-style: none;
     border-radius: 25px;
-    /* box-sizing: border-box; */
     color: white;
-    /* font-style: normal; */
     font-weight: 400;
     font-size: 16px;
     text-decoration: none;
-    /* line-height: 19px; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -57,12 +55,9 @@
 // RESTAURANTS MENU CARDS ELLIPSE
 
 @mixin ellipsis {
-    // display: block;
-    // min-width: 0;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    // width: calc(90%);
 }
 
 

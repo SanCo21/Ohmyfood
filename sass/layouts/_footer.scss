@@ -3,6 +3,7 @@
     background-color: $second-bg-color;
     margin-top: 25px;
     padding: 22px 25px 22px 25px;
+
     @include breakpoint-desktop {
         display: flex;
         flex-direction: row-reverse;
@@ -16,11 +17,11 @@
         font-size: 18px;
         margin-top: 0;
         margin-bottom: 20px;
+
         @include breakpoint-desktop {
             display: flex;
             flex-direction: row-reverse;
-            margin: 0 30px 5px 16px;                    
-            // justify-content: space-between;
+            margin: 0 30px 5px 16px;
         }
     }
     
@@ -28,11 +29,13 @@
         display: flex;
         flex-direction: column; 
         padding-left: 0;
+
         @include breakpoint-desktop {
             flex-direction: row;
             justify-content: space-between;
             margin-right: 50px;                    
         }
+
         a {
             text-decoration: none;
             color: white;
@@ -40,6 +43,7 @@
             padding-right: 14px;
             font-weight: 300;                                                   
             }
+
         .text-icon {    
             font-weight: 400;
         }   
@@ -56,6 +60,7 @@
         .footer__list-icon {
             display: flex;
             flex-direction: column;
+
             @include breakpoint-desktop {
                 padding-bottom: 0px;
                 display: flex;
@@ -66,6 +71,7 @@
         .footer__list-text {
             display: flex;
             flex-direction: column;
+            
             @include breakpoint-desktop {
                 display: flex;
                 flex-direction: row;
