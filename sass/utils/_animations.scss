@@ -1,4 +1,4 @@
-// LOADER INDEX
+// LOADER HOME PAGE
 
 @keyframes flash {
     0% {
@@ -57,5 +57,6 @@
         -moz-background-clip: text;
         -moz-text-fill-color: transparent;        
         opacity: 1;
+        cursor: pointer;
     }
 }

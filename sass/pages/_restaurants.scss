@@ -11,15 +11,13 @@
         background-position: center;
         object-fit: cover;
         overflow: hidden;        
-        max-height: 275px;  
-        
+        max-height: 275px;          
         
         & img {
             margin: -5% -5% -5% 0%;
-            width: 100%;
-            
+            width: 100%;            
             @include breakpoint-tablet {
-                margin: -20% 0 -10% 0;;
+                margin: -20% 0 -10% 0;
             }
             @include breakpoint-desktop {
                 max-height: 50%;                
@@ -124,8 +122,8 @@
                 background-color: white;
                 border-radius: 15px;
                 width: 100%;
-                overflow: hidden;                                                
-                              
+                overflow: hidden;   
+                                           
                 &__dish {                    
                     display: flex;
                     position: relative;
@@ -146,26 +144,18 @@
                         font-weight: 300;
                         margin: 0px 5px 0px 0px;
                         @include ellipsis;
-                    }
-
-                    &:hover + .menu-card__price-check { 
-                        width: 65%; 
-                        transform: translateX(0); 
-                        transform: translateX(-60px);  
-                        transition: all 0.3s ease-in-out; 
-                    }                             
+                    }                        
                 }
 
-                &__price-check {                        
+                &__price-check {                                           
                     display: flex;
-                    position: relative;
-                    right: -60px;                    
-                    justify-content: end;
-                    align-items: end;                    
+                    position: relative;                   
+                    justify-content: flex-end;
+                    align-items: flex-end;                  
                     padding-left: 5px;
-                    width: 33%; 
-                    transform: translateX(-60px); 
-                    transform: translateX(0);  
+                    width: 15%; 
+                    // transform: translateX(-60px); 
+                    // transform: translateX(0); 
                     transition: all 0.3s ease-in-out;                    
                                                                                
                     & p {
@@ -176,7 +166,10 @@
                     }
                     
                     &--check {  
-                        position: relative;                        
+                        right: -60px;
+                        // visibility: hidden; 
+                        position: absolute;
+                        // position: relative;                     
                         display: flex;                        
                         justify-content: center;
                         align-items: center;             
@@ -190,8 +183,19 @@
                             font-size: 20px;                            
                         }                                  
                     }                                                  
-                }                  
-            }
+                } 
+
+                &:hover {
+                    cursor: pointer;                
+               
+                    .menu-card__price-check { 
+                        width: 45%; 
+                        // transform: translateX(0); 
+                        transform: translateX(-60px);  
+                        transition: all 0.3s ease-in-out; 
+                    }
+                }                
+            }            
         }
         
         .order {

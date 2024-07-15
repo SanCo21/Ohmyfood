@@ -5,7 +5,7 @@
 		@content;
 	}
 } 
-/* large devices (desktop, less/equal than 1400px) */
+/* large devices (desktop, less/equal than 1200px) */
  @mixin breakpoint-desktop {
     @media screen and (min-width: $breakpoint-desktop) {
         @content;

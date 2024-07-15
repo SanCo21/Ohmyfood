@@ -12,7 +12,31 @@
   color: #9356dc;
 }
 
-/* large devices (desktop, less/equal than 1400px) */
+/* large devices (desktop, less/equal than 1200px) */
+@keyframes flash {
+  0% {
+    background-color: #9356dc;
+    box-shadow: 52px 0 #9356dc, -52px 0 #ff79da;
+  }
+  50% {
+    background-color: #ff79da;
+    box-shadow: 52px 0 #9356dc, -52px 0 #9356dc;
+  }
+  100% {
+    background-color: #9356dc;
+    box-shadow: 52px 0 #ff79da, -52px 0 #9356dc;
+  }
+}
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
 .heart-container {
   font-size: 21px;
   position: absolute;
@@ -38,32 +62,9 @@
   -moz-background-clip: text;
   -moz-text-fill-color: transparent;
   opacity: 1;
+  cursor: pointer;
 }
 
-@keyframes flash {
-  0% {
-    background-color: #9356dc;
-    box-shadow: 52px 0 #9356dc, -52px 0 #ff79da;
-  }
-  50% {
-    background-color: #ff79da;
-    box-shadow: 52px 0 #9356dc, -52px 0 #9356dc;
-  }
-  100% {
-    background-color: #9356dc;
-    box-shadow: 52px 0 #ff79da, -52px 0 #9356dc;
-  }
-}
-@keyframes appear {
-  0% {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0px);
-  }
-}
 .header {
   display: flex;
   flex-direction: column;
@@ -72,6 +73,7 @@
   background-color: white;
 }
 .header .logo {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -91,12 +93,14 @@
 .header .logo .fa-arrow-left {
   position: absolute;
   left: 25px;
-  top: 25px;
-  display: flex;
-  align-items: center;
   color: #353535;
   font-size: 17px;
   font-weight: bold;
+}
+@media screen and (min-width: 768px) {
+  .header .logo .fa-arrow-left {
+    margin-left: 0%;
+  }
 }
 @media screen and (min-width: 1200px) {
   .header .logo .fa-arrow-left {
@@ -232,7 +236,7 @@ body .loader i {
   justify-content: center;
   align-items: center;
   font-size: 20px;
-  margin-top: 4px;
+  margin-top: 5px;
 }
 body .main-container {
   width: 100%;
@@ -264,6 +268,7 @@ body .main-container main .location .fa-location-dot {
   padding-right: 17px;
 }
 body .main-container main .location p {
+  font-family: Roboto;
   color: #353535;
   font-size: 16px;
   font-weight: 500;
@@ -414,7 +419,7 @@ body .main-container main .how-to .how-to-container .card-container .card__numbe
 body .main-container main .how-to .how-to-container .card-container .card__icon {
   position: absolute;
   left: 35px;
-  top: 23px;
+  top: 27px;
   color: #7e7e7e;
   height: 20px;
   font-size: 19px;
@@ -529,6 +534,7 @@ body .main-container main .restaurants .restaurant-container .restaurant-card a 
   background-color: white;
 }
 .restaurant .restaurant__image {
+  background-position: center;
   -o-object-fit: cover;
      object-fit: cover;
   overflow: hidden;
@@ -669,22 +675,13 @@ body .main-container main .restaurants .restaurant-container .restaurant-card a 
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.restaurant .restaurant-info .menu-container .menu-card__dish:hover + .menu-card__price-check {
-  width: 65%;
-  transform: translateX(0);
-  transform: translateX(-60px);
-  transition: all 0.3s ease-in-out;
-}
 .restaurant .restaurant-info .menu-container .menu-card__price-check {
   display: flex;
   position: relative;
-  right: -60px;
-  justify-content: end;
-  align-items: end;
+  justify-content: flex-end;
+  align-items: flex-end;
   padding-left: 5px;
-  width: 33%;
-  transform: translateX(-60px);
-  transform: translateX(0);
+  width: 15%;
   transition: all 0.3s ease-in-out;
 }
 .restaurant .restaurant-info .menu-container .menu-card__price-check p {
@@ -694,7 +691,8 @@ body .main-container main .restaurants .restaurant-container .restaurant-card a 
   margin-right: 15px;
 }
 .restaurant .restaurant-info .menu-container .menu-card__price-check--check {
-  position: relative;
+  right: -60px;
+  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -706,6 +704,14 @@ body .main-container main .restaurants .restaurant-container .restaurant-card a 
 .restaurant .restaurant-info .menu-container .menu-card__price-check--check i {
   color: white;
   font-size: 20px;
+}
+.restaurant .restaurant-info .menu-container .menu-card:hover {
+  cursor: pointer;
+}
+.restaurant .restaurant-info .menu-container .menu-card:hover .menu-card__price-check {
+  width: 45%;
+  transform: translateX(-60px);
+  transition: all 0.3s ease-in-out;
 }
 .restaurant .restaurant-info .order {
   display: flex;

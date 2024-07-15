@@ -6,6 +6,7 @@
     background-color:white;
     
     .logo {
+        position: relative;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -24,12 +25,14 @@
         .fa-arrow-left {
             position: absolute;
             left: 25px;
-            top: 25px;
-            display: flex;
-            align-items: center;
             color: $second-bg-color;
             font-size: 17px;
-            font-weight: bold;            
+            font-weight: bold;
+
+            @include breakpoint-tablet {
+                margin-left: 0%;
+            }
+
             @include breakpoint-desktop {
                 top: 40px;
             }
